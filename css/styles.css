@@ -1,0 +1,710 @@
+/* ==========================================================================
+   Estilos Generales y Variables
+   ========================================================================== */
+:root {
+    --primary-color: #1e3a8a; /* Azul institucional */
+    --secondary-color: #0d9488; /* Verde azulado tecnológico */
+    --accent-color: #f59e0b; /* Amarillo/Dorado para detalles */
+    --text-dark: #1f2937;
+    --text-light: #4b5563;
+    --bg-light: #f3f4f6;
+    --white: #ffffff;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+body {
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Tipografía y Botones
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: #111827; }
+.text-white { color: var(--white); }
+.text-white .section-title { color: var(--white); }
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color var(--transition-speed);
+}
+
+.btn-primary:hover {
+    background-color: #0f766e;
+}
+
+/* ==========================================================================
+   Encabezado y Navegación (Estilo de Recuadros/Botones) - MULTIPÁGINA
+   ENCABEZADO DE DOS NIVELES (LOGO ARRIBA - MENÚ ABAJO)
+   ========================================================================== */
+   
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 95%;                /* Aumentado de 90% a 95% para aprovechar los laterales */
+    max-width: 1400px;         /* Mayor margen de expansión en pantallas muy grandes */
+    margin: 0 auto;
+    padding: 1rem 0 0.6rem 0;  /* Más aire arriba y abajo */
+}
+
+/* Área del Logo e Identidad Expandida */
+.logo-area {
+    display: flex;
+    flex-direction: row;       
+    align-items: center;       
+    justify-content: center;
+    gap: 30px;                 /* Más espacio de separación física entre el escudo y las letras */
+    margin-bottom: 1.2rem;     
+    width: 100%;
+}
+
+.logo-img {
+    height: 110px;             /* Agrandado de 95px a 110px para dar más peso visual */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.03);
+}
+
+/* Estilos de Texto en Formato Maxi */
+.logo-text {
+    display: flex;
+    flex-direction: column;    
+    align-items: flex-start;   
+}
+
+.logo-text h3 {
+    font-size: 2.6rem;         /* ¡Aumentado a un tamaño muy imponente! */
+    color: var(--primary-color);
+    font-weight: 800;          
+    margin: 0;
+    letter-spacing: -0.8px;    /* Ajuste de espacio entre letras para mantener armonía */
+    line-height: 1.05;
+}
+
+.logo-text p {
+    font-size: 1.15rem;        /* Subtexto proporcionalmente más grande */
+    color: #64748b; 
+    margin: 8px 0 0 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;       /* Mayor espaciado para que ocupe más ancho horizontal */
+}
+
+/* Barra de navegación inferior */
+.main-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    border-top: 1px solid #f1f5f9; 
+    padding-top: 1rem;         /* Más espacio con respecto a la línea divisoria */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-links > li > a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.6rem 1rem;
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+/* Estado hover y activos completamente estables */
+.nav-links > li > a:hover,
+.nav-links > li > a.active,
+.nav-links > li > a:active {
+    color: var(--white) !important;
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transform: none !important;
+    box-shadow: 0 2px 5px rgba(30, 58, 138, 0.15);
+}
+
+/* Estilo diferencial para el botón que abre Cursos */
+.nav-links > li > .dropdown-trigger {
+    background-color: #f0fdfa;
+    border-color: #ccfbf1;
+    color: #0f766e;
+}
+
+.nav-links > li > .dropdown-trigger:hover,
+.nav-links > li > .dropdown-trigger.active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    box-shadow: 0 2px 5px rgba(13, 148, 136, 0.2);
+}
+
+/* ==========================================================================
+   SUBMENÚ DESPLEGABLE FLOTANTE (CURSOS)
+   ========================================================================== */
+.dropdown { 
+    position: relative; 
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 0;
+    margin-top: 8px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 1010;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: var(--text-dark) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--bg-light) !important;
+    color: var(--secondary-color) !important;
+}
+
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   COMPENSACIÓN DE ALTURA PARA LAS PÁGINAS Y ANCLAS
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 210px; /* Ajustado para el nuevo tamaño */
+}
+
+.main-content-offset, 
+.hero-section {
+    margin-top: 195px !important; /* Empuja las páginas un poco más hacia abajo */
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA PARA DISPOSITIVOS MÓVILES
+   ========================================================================== */
+@media (max-width: 991px) {
+    .header-container {
+        flex-direction: row; /* En celulares vuelve a formato compacto horizontal */
+        justify-content: space-between;
+        padding: 0.6rem 0;
+    }
+    
+    .logo-area {
+        flex-direction: row; 
+        text-align: left;
+        margin-bottom: 0;
+        gap: 10px;
+    }
+    
+    .logo-img {
+        height: 50px; /* Logo más chico en móviles */
+    }
+    
+    .logo-text h3 {
+        font-size: 1.05rem;
+    }
+    
+    .logo-text p {
+        display: none; /* Ocultamos la localidad en celulares para ganar espacio */
+    }
+    
+    .main-nav {
+        border-top: none;
+        padding-top: 0;
+    }
+    
+    .main-content-offset, 
+    .hero-section {
+        margin-top: 75px !important; /* Margen normal en pantallas chicas */
+    }
+}
+
+/* ==========================================================================
+   Sección Héroe
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(13, 148, 136, 0.7)), url('https://picsum.photos/1920/1080?blur=2') no-repeat center center/cover;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 160px;
+    padding: 0 20px;
+}
+
+.hero-content {
+	margin-top: 60px;
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Grillas y Estructuras de Contenido
+   ========================================================================== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.feature-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+/* Línea de Tiempo (Cursos Tecnológicos) */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    background-color: var(--white);
+    border: 3px solid var(--primary-color);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.year-badge {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+/* Bloque de Información */
+.info-box {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.styled-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.styled-list li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.styled-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   Formularios y Elementos de Contacto
+   ========================================================================== */
+.contact-info li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-block;
+    background-color: rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color var(--transition-speed);
+}
+
+.social-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: var(--white);
+    border-radius: 4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color var(--transition-speed);
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.main-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Media Queries - Menú Colapsable para Móviles
+   ========================================================================== */
+@media (max-width: 991px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        display: none;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1rem;
+    }
+
+    /* Submenú Adaptado en Móvil */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: var(--bg-light);
+        margin-top: 5px;
+        display: none;
+    }
+
+    .dropdown.open-submenu .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown.open-submenu .dropdown-trigger .arrow {
+        transform: rotate(180deg);
+    }
+
+    .hero-content h2 { font-size: 1.8rem; }
+    .hero-content p { font-size: 1rem; }
+}
+
+/* Transformación de Hamburguesa a X (Icono Activo) */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Para menú hamburguesa de móviles
+   ==========================================================================
+*/
+
+/* 1. Estilo base del botón (Oculto en pantallas grandes) */
+.menu-toggle {
+  display: none; /* Se oculta en computadoras */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+/* 2. Estilo crucial para las 3 líneas (los spans) */
+.menu-toggle span {
+  display: block; /* Importante para que acepten ancho y alto */
+  width: 100%;
+  height: 3px;
+  background-color: #333333; /* Elige el color de las líneas (puedes usar var(--dark) o el que desees) */
+  border-radius: 3px;
+  transition: all 0.3s ease; /* Para futuras animaciones al abrir/cerrar */
+}
+
+/* 3. Mostrar el botón en dispositivos móviles */
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: flex; /* Cambia de 'none' a 'flex' para que sea visible */
+  }
+}
+
+/* ==========================================================================
+   Para ajustar tarjetas de novedades en móviles
+   ==========================================================================
+*/
+
+/* Hacer que las imágenes dentro de las tarjetas sean responsivas */
+.card-body img {
+    max-width: 100%;    /* Impide que la imagen sea más ancha que su contenedor */
+    height: auto;       /* Mantiene la proporción original de la imagen al encogerse */
+    display: block;     /* Elimina el espacio en blanco inferior que tienen las imágenes por defecto */
+    margin: 0 auto;     /* Opcional: centra la imagen si es más pequeña que la tarjeta */
+}
+
+/* Hacer que los videos dentro de las tarjetas sean responsivos */
+.card-body video {
+    max-width: 100%;    /* Impide que el video se desborde */
+    height: auto;       /* Mantiene la proporción del video */
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Para ajustar video de novedades en móviles
+   ==========================================================================
+*/
+
+/* Contenedor del video responsivo */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Proporción 1:1 (Cuadrada, igual que 330x330). Para formato horizontal común 16:9 usa 56.25% */
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px; /* Opcional: para redondear las esquinas del video igual que las tarjetas */
+}
+
+/* El iframe se expande dinámicamente para llenar el contenedor */
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cursos Tecnológicos - SIS</title>
+		<link rel="stylesheet" href="./css/styles.css">
+	</head>
+	<body>
+		<header class="main-header">
+		    <div class="header-container">
+		        <div class="logo-area">
+		            <div class="logo">
+		                <a href="index.html">
+		                    <img src="./imagenes/logo.jpg" alt="Logo Secundario Integral del Sur" class="logo-img">
+		                </a>
+		            </div>
+		            <div class="logo-text">
+		                <h3>Secundario Integral del Sur</h3>
+		            </div>
+		        </div>
+		        <button class="menu-toggle" aria-label="Abrir menú">
+		            <span></span><span></span><span></span>
+		        </button>
+		        <nav class="main-nav">
+		            <ul class="nav-links">
+		                <li><a href="index.html">Inicio</a></li>
+		                <li><a href="cursos.html" class="dropdown-trigger active">Cursos <span class="arrow">▼</span></a>
+		                    <ul class="dropdown-menu">
+		                        <li><a href="#7mo">7mo grado</a></li>
+		                        <li><a href="#8vo">8vo grado</a></li>
+		                        <li><a href="#9no">9no grado</a></li>
+		                    </ul>
+		                </li>
+		                <li><a href="actividades.html">Actividades</a></li>
+				        <li><a href="novedades.html">Novedades</a></li>
+				        <li><a href="contacto.html">Contacto</a></li>
+		            </ul>
+		        </nav>
+		    </div>
+		</header>
+
+		<main class="section-padding main-content-offset">
+		    <div class="container">
+		        <h2 class="section-title">El Camino Tecnológico</h2>
+		        <p class="section-subtitle">Nuestra propuesta curricular en Informática y Pensamiento Computacional para el Ciclo Básico.</p>
+
+		        <div class="timeline">
+		            <div id="7mo" class="timeline-item">
+		                <div class="timeline-content">
+		                    <span class="year-badge">7mo Año</span>
+		                    <h3>Introducción a la Lógica con Scratch</h3>
+		                    <p>Mediante la programación por bloques de Scratch, desarrollan la lógica de algoritmos...</p>
+		                </div>
+		            </div>
+		            <div id="8vo" class="timeline-item">
+		                <div class="timeline-content">
+		                    <span class="year-badge">8vo Año</span>
+		                    <h3>Programación Estructurada con Python</h3>
+		                    <p>Introducimos Python, uno de los lenguajes más utilizados a nivel mundial...</p>
+		                </div>
+		            </div>
+		            <div id="9no" class="timeline-item">
+		                <div class="timeline-content">
+		                    <span class="year-badge">9no Año</span>
+		                    <h3>Desarrollo Web (HTML, CSS y JS)</h3>
+		                    <p>Aprenden la estructura semántica con HTML5, el diseño estilizado con CSS3, y la interactividad dinámica con JavaScript...</p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</main>
+
+		<footer class="main-footer">
+		    <p>&copy; 2026 Secundario Integral del Sur (SIS).</p>
+		    <a href="https://www.netlify.com">
+		    	<img src="https://www.netlify.com/img/global/badges/netlify-light.svg">
+		    </a>
+		</footer>
+		<script src="./js/script.js"></script>
+	</body>
+</html>
